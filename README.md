@@ -41,3 +41,13 @@ onFilter(eventCriterio){
 ```
 ## Veja um exemplo do componente funcionando
 ![](https://github.com/pauloanalista/Autocomplete-em-Ionic5/blob/master/tela.gif)
+
+
+## Treinamentos
+- [Meus cursos](https://olha.la/udemy)
+
+## Fique ligado, acesse!
+- [Blog ILoveCode](https://ilovecode.com.br)
+
+## Novidades, cupons de descontos e cursos gratuitos
+https://olha.la/ilovecode-receber-cupons-novidades
