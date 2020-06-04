@@ -1,0 +1,20 @@
+<ion-item>
+  <ion-label position="stacked">{{label}}</ion-label>
+  <ion-input #criterio [placeholder]="placeholder" type="text" (keyup)="filtrar(criterio.value)" (ionBlur)="onBlur()"
+    (ionFocus)="onFocus()" [(ngModel)]="nomeSelecionado" clearInput>
+  </ion-input>
+
+
+  <!-- <ion-label stacked>
+    <span class="titulo_label">{{label}}</span>
+  </ion-label>
+  <ion-input #criterio type="text" class="iconRight" [placeholder]="placeholder" (keyup)="filtrar(criterio.value)" (ionBlur)="onBlur()" (ionFocus)="onFocus()" [(ngModel)]="localSelecionado" clearInput>
+  </ion-input>
+  <ion-icon [name]="icone" item-end color="primary" (click)="clickIcon()"></ion-icon> -->
+</ion-item>
+
+<ion-list no-lines *ngIf="collection?.length > 0 && digitando==true" style="position: relative; margin-top: 0px; float: left; width:100%; z-index: 1000; background: red;">
+  <ion-item *ngFor="let item of collection" (click)="selecionar(item)">
+    <ion-label>{{item.nome}}</ion-label>
+  </ion-item>
+</ion-list>
