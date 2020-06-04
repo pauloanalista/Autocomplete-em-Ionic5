@@ -39,4 +39,5 @@ onFilter(eventCriterio){
     console.log(eventSelectedItem);
   }
 ```
-
+## Veja um exemplo do componente funcionando
+![](https://github.com/pauloanalista/Autocomplete-em-Ionic5/blob/master/tela.gif)
