@@ -27,32 +27,37 @@ export class IonItemAutocompleteComponent  {
   @Output() onFilter = new EventEmitter<any>();
   
   @Output() onSelectedItem = new EventEmitter<any>();
-   
+  @Output() onClear = new EventEmitter<any>();
+  
   
   tempoPesquisa: number = 0;
   timerTempoPesquisa: any = null;
   criterioAPesquisar: string = '';
+  
 
   constructor() {
 
   }
 
   filtrar(criterio: string) {
+    this.onClear.emit(criterio);
     this.digitando = true;
+    this.criterioAPesquisar = criterio;
 
     if (criterio.length < 3) {
       return;
     }
 
+    
     this.tempoPesquisa = 1;
 
-    this.criterioAPesquisar = criterio;
   }
 
   selecionar(item: any) {
-    this.onSelectedItem.emit(item);
     this.digitando = false;
     this.nomeSelecionado = item.nome;
+    
+    this.onSelectedItem.emit(item);
   }
 
   
@@ -64,7 +69,7 @@ export class IonItemAutocompleteComponent  {
         //Vai pesquisar
         console.log('vai pesquisar => ', this.criterioAPesquisar);
         this.executarFiltro(this.criterioAPesquisar);
-        this.criterioAPesquisar = '';
+        //this.criterioAPesquisar = '';
       }
 
       this.tempoPesquisa = this.tempoPesquisa - 1;
@@ -74,6 +79,8 @@ export class IonItemAutocompleteComponent  {
   }
 
   executarFiltro(criterio) {
+    console.log('executarFiltro digitando=>' + this.digitando);
+    
     this.onFilter.emit(criterio);
   }
 
